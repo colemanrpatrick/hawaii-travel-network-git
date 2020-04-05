@@ -88,6 +88,16 @@ main {
     font-size: 10px;
   }
 }
+@media(max-width:350px){
+  main{
+    font-size: 8px;
+  }
+}
+@media(max-width:300px){
+  main{
+    font-size: 7px;
+  }
+}
 /*================================*/
 .home a {
   background-image: url("images/arrow.png");
@@ -489,6 +499,7 @@ main {
   display: table;
   width: 100%;
   max-width: 1200px;
+  border-bottom: 0.15em solid white;
 }
 @media(max-width:1440px) {
 }
@@ -530,17 +541,15 @@ main {
 		display: none;
 	}
 }
-#next-checkpoint {
-  font-size: 30px;
-  background-color: gold;
-  color: darkgreen;
-  border: 0;
-  padding: 0.25em;
-  width: 300px;
-  text-transform: capitalize;
-  line-height: 1em;
-  display: inline-block;
-  vertical-align: middle;
+@media(max-width:500px){
+  .phone-left {
+    text-align: left;
+    padding-left: 0.5em;
+  }
+  .phone-right {
+    text-align: right;
+    padding-right: 0.5em;
+  }
 }
 /* === banner ===*/
 .banner-wrapper {
@@ -687,6 +696,12 @@ main {
 	top: 43%;
 	}
 }
+@media(max-width:400px){
+  .banner img {
+    right: 1em;
+    height: 23em;
+  }
+}
 /*========*/
 .island-nav {
   width: 100%;
@@ -716,6 +731,7 @@ main {
   background-image: url("images/design_4.png");
   background-size: contain;
   background-repeat: repeat-x;
+  line-height: 2em;
 }
 .island-nav header span {
   font-size: 24px;
@@ -1368,6 +1384,9 @@ main {
 @media(max-width:950px) {
   .article-bloc{
     padding-top: 0;
+  }
+  .article-bloc article p {
+    font-size: 1.15em;
   }
   .article-bloc article {
 	display: block;
