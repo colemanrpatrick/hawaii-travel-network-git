@@ -534,17 +534,19 @@ main {
 		display: none;
 	}
 }
-#next-checkpoint {
-  font-size: 1.25em;
-  background-color: gold;
-  color: darkgreen;
-  border: 0;
-  padding: 0.25em;
-  width: 300px;
-  text-transform: capitalize;
-  line-height: 1em;
-  display: inline-block;
-  vertical-align: middle;
+@media(max-width:450px){
+  .phone-left {
+    text-align: left;
+    padding-left: 0.5em;
+  }
+  .phone-right {
+    text-align: right;
+    padding-right: 0.5em;
+  }
+  .logo {
+    position: absolute;
+    height: 10em;
+  }
 }
 /* === banner ===*/
 .banner-wrapper {
@@ -554,9 +556,7 @@ main {
   background-size: cover;
   background-image: url("images/Waimea_Bay.jpg");
   background-position: center;
-  transition: 1s;
   overflow: hidden;
-  opacity: 0;
 }
 .banner {
   max-width: 1200px;
@@ -594,9 +594,6 @@ main {
 	-webkit-transform: translateX(-50%);
 					transform: translateX(-50%);
 }
-.checkpoint-first.active .banner-wrapper {
-  opacity: 1;
-}
 .banner img {
   position: absolute;
   right: 6em;
@@ -622,13 +619,6 @@ main {
 }
 #tour-br{
 	display: none;
-}
-.checkpoint-first.active .banner img {
-  -moz-transform: translateY(0%);
-  -ms-transform: translateY(0%);
-  -o-transform: translateY(0%);
-  -webkit-transform: translateY(0%);
-          transform: translateY(0%);
 }
 .banner button {
   font-size: 3em;
@@ -691,6 +681,24 @@ main {
 	top: 43%;
 	}
 }
+@media(max-width:400px){
+  .banner section header {
+    font-size: 3em;
+  }
+  .banner img {
+    right: 0em;
+    height: 26em;
+  }
+  .banner section {
+    width: 100%;
+  }
+  .banner hr {
+    top: 33.6em;
+  }
+  .banner hr {
+    width: 100%;
+  }
+}
 /*========*/
 .island-nav {
   width: 100%;
@@ -750,32 +758,16 @@ main {
   z-index: 2;
 }
 .maui-a a {
-  top: -9em;
-  transition: 0.25s;
-}
-.checkpoint.active .maui-a a {
   top: 0;
 }
 .oahu-a a {
-  top: -9em;
-  transition: 0.5s;
-}
-.checkpoint.active .oahu-a a {
   top: 4em;
 }
 .kauai-a a {
-  top: -9em;
-  transition: 0.75s;
-}
-.checkpoint.active .kauai-a a {
   top: 8em;
 }
 .big-island-a a {
-  top: -12em;
-  transition: 1s;
-}
-.checkpoint.active .big-island-a a {
-  top: 9em;
+  top:9em;
 }
 .island-a img {
 	width: 80%;
@@ -834,17 +826,16 @@ main {
           transform: translateY(-30%);
 }
 @media(max-width:650px){
-	.checkpoint .maui-a a {
+	.maui-a a {
 	  top: 0;
 	}
-	.checkpoint .oahu-a a {
+	.oahu-a a {
 	  top: 4em;
 	}
-	.checkpoint .kauai-a a {
+	.kauai-a a {
 	  top: 8em;
 	}
-	.checkpoint.active .big-island-a a,
-	.checkpoint .big-island-a a {
+	.big-island-a a{
 	  top: 9em;
 	}
 }
@@ -861,68 +852,37 @@ main {
   overflow: hidden;
 }
 .activities header h2 {
-  position: absolute;
-  left: 0.25em;
-  top: 50%;
-  -moz-transform: translateY(-300%);
-  -ms-transform: translateY(-300%);
-  -o-transform: translateY(-300%);
-  -webkit-transform: translateY(-300%);
-          transform: translateY(-300%);
-  width: 100%;
-  text-align: center;
-  font-size: 3em;
-  color: white;
-  line-height: 0.9em;
-  text-transform: capitalize;
-  transition: 1s;
-  text-shadow: 0em 0.1em 0.15em #00000073;
+	position: absolute;
+	left: 0.25em;
+	top: 50%;
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	width: 100%;
+	text-align: center;
+	font-size: 3em;
+	color: white;
+	line-height: 0.9em;
+	text-transform: capitalize;
+	transition: 1s;
+	text-shadow: 0em 0.1em 0.15em #00000073;
+	z-index: 5;
 }
 .activities header h2 span {
   font-size: 0.5em;
 }
-.checkpoint.active .activities header h2 {
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
-.activities header:before {
-  content: "";
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  background-size: cover;
-  z-index: -1;
-  background-image: url("images/shoreBackground.jpg");
-  background-position: top;
-  opacity: 0;
-  transition: 1s;
-}
-.checkpoint.active .activities header:before {
-  opacity: 1;
+.activities header {
+	background-size: cover;
+	background-image: url("images/shoreBackground.jpg");
+	background-position: center;
 }
 .activities header img {
 	position: absolute;
 	bottom: 0;
 	right: 3em;
 	height: 20em;
-  -moz-transform: translateY(100%);
-  -ms-transform: translateY(100%);
-  -o-transform: translateY(100%);
-  -webkit-transform: translateY(100%);
-          transform: translateY(100%);
-	transition: 1s;
-}
-.checkpoint.active .activities header img {
-  -moz-transform: translateY(0%);
-  -ms-transform: translateY(0%);
-  -o-transform: translateY(0%);
-  -webkit-transform: translateY(0%);
-          transform: translateY(0%);
 }
 .activities-container {
   width: 100%;
@@ -940,10 +900,14 @@ main {
   padding: 3em;
 }
 .activity {
-  display: inline-block;
-  width: 24%;
-  padding-top: 1em;
-  position: relative;
+	display: inline-block;
+	width: 24%;
+	padding-top: 1em;
+	position: relative;
+	vertical-align: top;
+}
+.activity:hover{
+  transform: scale(1.1);
 }
 .activity img {
 	width: 5em;
@@ -953,7 +917,7 @@ main {
 	border-radius: 50%;
 	border: 3px solid white;
 }
-.activity a {
+.activity p {
 	display: block;
 	background-color: #00af9a;
 	height: 3em;
@@ -961,288 +925,54 @@ main {
 	border-radius: 2em;
 	width: 90%;
 	margin: 0 auto;
+	padding: 2em;
+}
+.activity p span {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
 	color: white;
-}
-.activity span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  text-transform: capitalize;
-  width: 100%;
-}
-/*==============================*/
-/* .featured {
-  width: 100%;
-  position: relative;
-  padding: 3em;
-  background-image: url("images/tapas.jpg");
-  background-size: 15em;
-}
-.featured h2 {
-	width: 100%;
-	text-align: center;
-	font-size: 3em;
-	color: #004f8f;
+	font-size: 1.25em;
 	text-transform: capitalize;
-	line-height: 0.75em;
-	padding: 1em;
-	background-size: contain;
-	background-repeat: repeat-x;
 }
-.checkpoint.active .featured::before {
-  opacity: 1;
-}
-.featured-list {
-	margin: 0 auto;
-	display: table;
-	width: 100%;
-}
-@media(max-width:1250px) {
-  .featured-list {
-    width: 100%;
-  }
-}
-.category {
-  text-align: center;
-  width: 100%;
-}
-.product-wrapper {
-	width: 32%;
+@media(max-width:700px){
+  .activity {
 	display: inline-block;
-	text-align: center;
-	vertical-align: top;
-	margin: 0.5%;
-}
-.product{
-	width: 100%;
-	height: 20em;
+	width: 45%;
+	padding-top: 1em;
 	position: relative;
-	background-color: black;
-	overflow: hidden;
-}
-.product header {
-	position: absolute;
-	top: 50%;
-	font-size: 1.5em;
-	line-height: 1em;
-	color: white;
-	z-index: 2;
-	text-align: center;
-	padding: 1em;
-	text-transform: capitalize;
-	left: 50%;
-  -moz-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  -o-transform: translate(-50%,-50%);
-  -webkit-transform: translate(-50%,-50%);
-          transform: translate(-50%,-50%);
-	width: 100%;
-	text-shadow: 0px 0px 0.15em black;
-}
-.product header p {
-	font-size: 0.75em;
-}
-.product header span {
-  font-size: 0.75em;
-  display: block;
-  font-family: "Lexend Deca";
-}
-.product header span b{
-  font-size: 1.2em;
-}
-.product img {
-	position: absolute;
-	left: 50%;
-	top: 50%;
-  -moz-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  -o-transform: translate(-50%,-50%);
-  -webkit-transform: translate(-50%,-50%);
-          transform: translate(-50%,-50%);
-	height: 100%;
-	opacity: 0.75;
-	transition: 0.3s;
-}
-.product-wrapper:hover img{
-	opacity: 1;
-  -moz-transform: translate(-50%,-50%) scale(1.1);
-  -ms-transform: translate(-50%,-50%) scale(1.1);
-  -o-transform: translate(-50%,-50%) scale(1.1);
-  -webkit-transform: translate(-50%,-50%) scale(1.1);
-          transform: translate(-50%,-50%) scale(1.1);
-}
-.product-wrapper ul{
-	width: 100%;
-	display: table;
-	text-align: center;
-}
-.product-wrapper ul li{
-	width: 50%;
-	display: table-cell;
-	padding-bottom:2em;
-	vertical-align: middle;
-}
-.product-wrapper ul li a,
-.product-wrapper ul li button {
-	color: white;
-	background-color: #004f8f;
-	padding: 0.25em 1em;
-	display: inline-block;
-	border-radius: 1em;
-	margin: 0.5em auto;
-	font-size: 1.15em;
-	transition: 0.3s;
-	border: none;
-	text-transform: capitalize;
-}
-.product-wrapper ul li a:hover,
-.product-wrapper ul li button:hover{
-	background-color: gold;
-	color: #45752e;
-}
-@media(max-width:850px){
-  .product-wrapper {
-	width: 22em;
-	display: inline-block;
-	text-align: center;
-	vertical-align: top;
   }
+  .activities header h2 {
+	text-align: left;
 }
-.product-detail-wrapper{
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.75);
-  z-index: 998;
-  left: 50%;
-  top: 50%;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  -moz-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  -o-transform: translate(-50%,-50%);
-  -webkit-transform: translate(-50%,-50%);
-          transform: translate(-50%,-50%);
-  transition: 0.3s;
-  white-space: nowrap;
+.activities header img {
+	right: 1em;
 }
-.product-detail-wrapper.active{
-  border-radius: 0%;
-  width: 100%;
-  height: 100%;
 }
-.product-detail {
-  position: absolute;
-  max-width: 850px;
-  width: 95%;
-  background-color: white;
-  box-shadow: 0px 5px 15px -5px black;
-  left: 50%;
-  top: 50%;
-  -moz-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  -o-transform: translate(-50%,-50%);
-  -webkit-transform: translate(-50%,-50%);
-          transform: translate(-50%,-50%);
-  z-index: 999;
-  white-space: normal;
-}
-.product-detail header {
-  width: 100%;
-  text-align: center;
-  background-color:#5900b1;
-  text-transform: capitalize;
-  display: block;
-  color: white;
-  position: relative;
-  padding: 2em 1em;
-}
-.product-detail header h3 {
-	font-size: 1.5em;
-	color: white;
-	line-height: 1em;
-}
-.product-detail header button{
-  position: absolute;
-  right: 1em;
-  top: 50%;
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  background-color: transparent;
-	border: 0px;
-	background-color: transparent;
-	cursor: pointer;
-}
-.product-detail button .material-icons {
-	color: white;
-	font-size: 3em;
-}
-.product-detail article{
-  background-color: white;
-  text-align: center;
-  padding: 1em;
-}
-.product-detail p {
-  line-height: 2em;
-  text-align: center;
-  padding-left: 1em;
-  padding-right: 1em;
-  padding-bottom: 0.75em;
-	text-transform: capitalize;
-}
-.product-detail p b {
-  font-weight: bold;
-}
-.product-detail ul{
-  width: 100%;
-  display: table;
-}
-.product-detail ul li {
-  display: table-cell;
-  width: 50%;
-  text-align: center;
-  font-size: 1em;
-  text-transform: capitalize;
-}
-.product-detail ul li span {
-  font-size: 1.5em;
-  font-weight: bolder;
-  display: block;
-  color: darkgreen;
-}
-.product-detail a {
-  background-color: gold;
-  font-size: 1.15em;
-  padding: 0.5em 3em;
-  display: inline-block;
-  text-transform: capitalize;
-  border-radius: 1em;
-} */
 /*==========================================*/
 .article-header {
 	width: 100%;
 	height: 20em;
 	position: relative;
 	overflow: hidden;
+	background-size: cover;
+	background-image: url("images/waimea-canyon.jpg");
+	background-position: center;
 }
 .article-header h2 {
   position: absolute;
   left: 0;
   top: 50%;
-  -moz-transform: translateY(-300%);
-  -ms-transform: translateY(-300%);
-  -o-transform: translateY(-300%);
-  -webkit-transform: translateY(-300%);
-          transform: translateY(-300%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   width: 100%;
   text-align: center;
   font-size: 3em;
@@ -1256,48 +986,17 @@ main {
 .article-header h2 span {
 	font-size: 0.5em;
 }
-.checkpoint.active .article-header h2 {
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
- .article-header:before {
-  content: "";
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  background-size: cover;
-  z-index: -1;
-  background-image: url("images/waimea-canyon.jpg");
-  background-position: top;
-  opacity: 0;
-  transition: 1s;
-}
-.checkpoint.active  .article-header:before {
-  opacity: 1;
-}
  .article-header img {
   position: absolute;
   bottom: -5em;
   right: 0;
   height: 26em;
-  -moz-transform: translateY(90%);
-  -ms-transform: translateY(90%);
-  -o-transform: translateY(90%);
-  -webkit-transform: translateY(90%);
-          transform: translateY(90%);
-  transition: 1s;
-}
-.checkpoint.active .article-header img {
   -moz-transform: translateY(0%);
   -ms-transform: translateY(0%);
   -o-transform: translateY(0%);
   -webkit-transform: translateY(0%);
           transform: translateY(0%);
+  transition: 1s;
 }
 @media(max-width:1000px){
 	.article-header  header {
@@ -1312,7 +1011,22 @@ main {
 		bottom: 0;
 	}
 }
+.activities header h2 {
+  text-align: left;
+  padding-left: 1em;
+  top: 70%;
+}
+@media(max-width:400px){
+  .activities header h2 {
+    text-align: left;
+    padding-left: 1em;
+    top: 70%;
+  }
+}
 /*===========*/
+.article-wrapper {
+	border-top: 1em solid white;
+}
 .article-bloc {
 	background-color: white;
 	display: table;
@@ -1359,9 +1073,9 @@ main {
 .article-bloc article {
 	display: table-cell;
 	width: 60%;
-	vertical-align: middle;
+	vertical-align: top;
 	position: relative;
-	padding: 3em;
+	padding: 0em 2em 3em 2em;
 }
 .article-bloc article p {
 	font-size: 1em;
@@ -1395,27 +1109,48 @@ main {
 	width: 100%;
 	padding: 2em;
 }
-  #article-2{
+  #article-1{
     -moz-transform: scaleY(-1);
     -ms-transform: scaleY(-1);
     -o-transform: scaleY(-1);
     -webkit-transform: scaleY(-1);
             transform: scaleY(-1);
   }
-    #article-2.article-bloc article {
+    #article-1.article-bloc article{
       -moz-transform: scaleY(-1);
       -ms-transform: scaleY(-1);
       -o-transform: scaleY(-1);
       -webkit-transform: scaleY(-1);
               transform: scaleY(-1);
   }
-    #article-2.article-bloc aside {
+    #article-1.article-bloc aside{
       -moz-transform: scaleY(-1);
       -ms-transform: scaleY(-1);
       -o-transform: scaleY(-1);
       -webkit-transform: scaleY(-1);
               transform: scaleY(-1);
   }
+  #article-3{
+    -moz-transform: scaleY(-1);
+    -ms-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+            transform: scaleY(-1);
+  }
+  #article-3.article-bloc article{
+    -moz-transform: scaleY(-1);
+    -ms-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+            transform: scaleY(-1);
+}
+  #article-3.article-bloc aside{
+    -moz-transform: scaleY(-1);
+    -ms-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+            transform: scaleY(-1);
+}
 }
 /*===========*/
 .coverage-section {
